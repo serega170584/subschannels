@@ -1,0 +1,19 @@
+{
+    "name": "serega170584/subschannels",
+    "description": "Subscribe channels for users",
+    "authors": [
+        {
+            "name": "Sergey Krivobokov",
+            "email": "serega17058@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "classmap": [],
+        "files": [],
+        "psr-4": {
+            "Serega170584\\Subschannels": "src/"
+        }
+}
+}

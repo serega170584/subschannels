@@ -1,0 +1,21 @@
+{% extends config('subschannels.views.layout') %}
+{% block content %}
+    <h1>Подписные каналы</h1>
+    <form action="{{ action }}" method="POST" role="form" class="form-inline">
+        {{ method_field(method) }}
+        {{ csrf_field() }}
+        {% for item in subschannels %}
+            <div class="checkbox">
+                <label for="subschannels{{ item.id }}">
+                    {% set checked=' ' %}
+                    {% if user.hasSubschannel(item) %}
+                        {% set checked = ' checked' %}
+                    {% endif %}
+                    <input type="checkbox" id="subschannels{{ item.id }}" name="subschannels[]" value="{{ item.id }}"{{ checked }} > {{ item.name }}</label>
+            </div>
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+{% endblock %}
+
